@@ -1,0 +1,279 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #B00020;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.form-container {
+    text-align: left;
+    margin-top: 10px; /* Reduced margin */
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="color"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 6px; /* Reduced margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+button {
+    background-color: #B00020;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Add some space between buttons */
+}
+
+button:hover {
+    background-color: #800014;
+}
+
+.qr-code-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#qr-code {
+    max-width: 100%;
+    height: auto;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #B00020;
+    font-weight: 700;
+    display: none;
+}
+
+#download-link {
+    text-decoration: none;
+}
+
+#download-button,
+#download-qr-button,
+#join-whatsapp-button {
+    background-color: #B00020;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#download-button:hover,
+#download-qr-button:hover,
+#join-whatsapp-button:hover {
+    background-color: #800014;
+}
+
+/* Ensure proper mobile responsiveness */
+@media (max-width: 768px) {
+    /* ... (previous CSS rules) */
+
+    /* Rearrange buttons on mobile devices */
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    /* Add margin between buttons */
+    #contact-whatsapp-button {
+        margin-top: 10px;
+    }
+
+    /* Organize payment logos into two columns and three rows */
+    .horizontal-payment-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .horizontal-payment-list li {
+        flex: 0 0 calc(33.33% - 12px); /* Set width for three columns and adjust spacing */
+        margin: 6px;
+        text-align: center; /* Center logos horizontally */
+    }
+
+    .horizontal-payment-list img {
+        height: 40px;
+        margin: 0 auto; /* Center logos vertically */
+    }
+
+    /* Adjust margin and padding for better mobile layout */
+    .thank-you {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+}
+
+
+/* Styles for business name text */
+.business-name-text {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px auto;
+    color: inherit;
+    text-transform: capitalize;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the QR code wrapper */
+.qr-code-wrapper {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the "Call to Action" text box */
+.call-to-action-box {
+    position: absolute;
+    top: 20px; /* Add 20px distance from the top */
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    z-index: 1; /* Ensure it's above the QR code */
+}
+
+/* Styles for the "Call to Action" text */
+.call-to-action-text {
+    font-weight: bold;
+    font-size: calc(var(--qr-size) / 10); /* Increase the font size */
+    color: inherit; /* Inherit the color from the QR code */
+    text-transform: capitalize;
+    margin-top: 20px; /* Add 20px distance from the QR code */
+}
+
+/* Styles for the final PNG message */
+.final-message {
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px; /* Customize font size */
+    margin-top: 20px;
+    color: #333; /* Text color */
+    z-index: 2; /* Ensure it's above the QR code and "Call to Action" text */
+}
+
+/* Styles for the "Call to Action" text box */
+#call-to-action {
+    font-weight: bold;
+    font-size: 18px; /* Customize font size */
+    color: #333; /* Text color */
+    text-align: center;
+    display: none; /* Initially hidden */
+    margin-top: 20px; /* Adjust spacing as needed (e.g., 2 cm) */
+}
+
+/* Add styles for the payment solution logos */
+.horizontal-payment-list {
+    list-style: none;
+    display: flex; /* Display the logos in a row */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.horizontal-payment-list li {
+    margin-right: 10px; /* Adjust the spacing between logos */
+}
+
+.horizontal-payment-list li:last-child {
+    margin-right: 0; /* Remove right margin for the last logo */
+}
+
+.horizontal-payment-list img {
+    width: auto; /* Let the logos maintain their original size */
+    height: 60px; /* Set a fixed height for uniformity */
+}
+
+/* Styles for the button container */
+.button-container {
+    display: flex; /* Display buttons in a row */
+    justify-content: space-between; /* Add space between buttons */
+    align-items: center; /* Vertically align buttons */
+    margin-top: 20px; /* Adjust spacing from the previous element */
+}
+
+#download-button,
+#contact-whatsapp-button {
+    background-color: #B00020;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#download-button:hover,
+#contact-whatsapp-button:hover {
+    background-color: #800014;
+}
+
